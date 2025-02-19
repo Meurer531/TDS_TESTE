@@ -1,47 +1,15 @@
-function doisSoma(a, b) {
-        return a+b;
-};
+const pessoa = require("./pessoa");
 
-console.log("a soma final foi:", doisSoma(4, 2));
+console.log(pessoa.cadastroPessoa("Guilherme", 27))
+console.log(pessoa.cadastroPessoa("Guilherme Meurer", 16))
+console.log(pessoa.cadastroPessoa("Guabriella", 18))
+console.log(pessoa.cadastroPessoa("Adriel", 18))
+console.log(pessoa.cadastroPessoa("Davi", 20))
+console.log(pessoa.cadastroPessoa("Larissa", 17))
+console.log(pessoa.cadastroPessoa("Gabriel", 17))
+console.log(pessoa.cadastroPessoa("Julia", 17))
 
-function doisMultiplica(a, b){
-    return a * b;
-}
+console.log(pessoa.consultaTodasAsPessoas());
+pessoa.deletePessoa(6);
 
-console.log("a multiplicação final foi:", doisMultiplica(5, 5));
-
-function doisDivisao(a, b){
-    return a / b;
-}
-
-console.log("a divisão final foi:", doisDivisao(16, 2));
-
-
-
-
-
-
-const data = []
-
-data.push(1);
-data.push(1);
-data.push(1);
-data.push(1);
-data.push(1);
-
-console.log(data);
-
-data.splice(0, 1);
-
-console.log(data);
-
-
-
-const pessoa = {
-    id: 1,
-    nome: "Guilherme",
-    idade: 16,
-}
-
-console.log(pessoa);
-console.log(pessoa.idade);
+console.log(pessoa.consultaPessoaID(4))
