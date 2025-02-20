@@ -1,5 +1,5 @@
 const pessoas = [];
-var idSeq = 0;
+var idSeq = 1;
 
 function cadastroPessoa(nome, idade) {
     var pessoa = { id: idSeq++, nome: nome, idade: idade };
@@ -15,7 +15,6 @@ function deletePessoa(id) {
     var teveRetorno = true;
     for (let i = 0; i < pessoas.length; i++) {
         if (pessoas[i].id == id) {
-            console.log(pessoas[i]);
             pessoas.splice(i, 1);
             teveRetorno = true;
             return "pessoa deletada com sucesso"
@@ -30,18 +29,33 @@ function deletePessoa(id) {
 }
 
 function consultaPessoaID(id){
-    return pessoas.filter(item => item.id = id);
+    return pessoas.filter(item => item.id == id);
 }
 
 function atualizaPessoa(id, nome, idade){
 
+    var teveRetorno = true;
+    for (let i = 0; i < pessoas.length; i++){
+        if(pessoas[i].id == id){
+            pessoas[i].nome = nome;
+            pessoas[i].idade = idade;
+            return pessoas[i];
+        } else{
+            teveRetorno = false;
+        }
+    }
+
+    if(!teveRetorno){
+        return "O codigo da pessoa é invalido";
+    }
 }
 
 module.exports = {
     cadastroPessoa,
     consultaTodasAsPessoas,
     deletePessoa,
-    consultaPessoaID
+    consultaPessoaID,
+    atualizaPessoa
 }
 
 
