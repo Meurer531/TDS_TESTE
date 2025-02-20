@@ -47,3 +47,10 @@ console.log(pessoa);
 console.log(pessoa.idade);
 
 
+module.exports = {
+    doisSoma,
+    doisMultiplica,
+    doisDivisao
+}
+
+
