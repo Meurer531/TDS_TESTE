@@ -1,3 +1,7 @@
+const pedido = require("./pedido");
+const produto = require("./produto");
+const cliente = require("./cliente");
+
 function cadastrarProduto(){
     return{
         id: 1,

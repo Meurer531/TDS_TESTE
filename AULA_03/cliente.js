@@ -1,14 +1,14 @@
-const cliente  = require("./mercado");
+const clientes = [];
+const seqID = 1;
 
-const bancoDeDados = [];
-
-function cadastrarNovoCliente(id, nome, cpf) {
-    var cliente = { id: id, nome: nome, cpf: cpf };
-    bancoDeDados.push(cliente);
-    return cliente;
+module.exports = {
+    inserir: (nome, cpf) => {
+        const cliente = {id: seqID++, nome, cpf}
+        cliente.push(cliente);
+        return cliente;
+    },
+    deletar: () => {},
+    atualizar: () =>{},
+    buscaTodosProdutos: () => {},
+    buscaPorID: () => {}
 }
-
-const cliente = cadastrarPessoa();
-cadastrarNovoCliente(cliente.id, cliente.nome, cliente.CPF);
-
-console.log("Banco de Dados:", bancoDeDados);
